@@ -334,7 +334,7 @@ Two credentials connect the bouncer to the engine:
 - A **bouncer API key** (`cscli bouncers add ...`) — authenticates the enforcer.
 - A **machine login/password** (`cscli machines add ...`) — registers pfSense as
   an agent to the remote API.
-
+![Crowdsec acquisition and bouncerlist](csclibouncerlist.png)
 ### Verifying it actually works
 
 The bouncer connection, healthy and pulling on schedule:
@@ -352,6 +352,7 @@ the GUI:
 $ pfctl -t crowdsec_blacklists -T show | wc -l
 14534
 ```
+![pfsense CLI showing Crowdsec blacklists](pfctl.png)
 
 **~14,500 known-malicious IPs** loaded into the firewall and dropped at the edge,
 sourced from the community and refreshed automatically. The pfSense plugin manages
